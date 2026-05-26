@@ -4,6 +4,7 @@ comandos=(
     "echo 'Iniciar a instalação do desktop... (Instalar desktop)' && sudo apt install i3-wm xorg py3status suckless-tools xfce4-terminal rofi fzf wmctrl pcmanfm lxappearance nitrogen fonts-open-sans fonts-inconsolata arc-theme xz-utils bash-completion alsa-utils pipewire pipewire-audio unzip" 
     "echo 'Instalar aplicativo básicos... (Instalar aplicativos)' && sudo apt install qimgv evince vlc htop mousepad flameshot" 
     "echo 'Instalar pacote libreoffice... (Instalar aplicativo libreoffice)' && sudo apt install --no-install-recommends libreoffice-writer libreoffice-calc libreoffice-impress" 
+    "echo 'Navegador... (Navegador)' && cat firefox.tar.gz.* > firefox.tar.gz & tar -xzvf firefox.tar.gz & sudo mv firefox.desktop /usr/share/applications"
     "echo 'Instalar login... (Instalar login)' && sudo apt install lightdm lightdm-gtk-greeter" 
     "echo 'Ativar login... (Ativar login)' && sudo systemctl enable lightdm" 
     "echo 'Iniciar login... (Iniciar login)' && sudo systemctl start lightdm" 
