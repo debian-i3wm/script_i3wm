@@ -2,12 +2,14 @@
 declare -A comandos
 comandos=(
     ["Atualizar o sistema"]="sudo apt update && sudo apt upgrade -y"
-    ["Instalar o desktop"]="sudo apt install i3-wm xorg py3status suckless-tools xfce4-terminal rofi fzf wmctrl pcmanfm lxappearance nitrogen fonts-open-sans fonts-inconsolata arc-theme xz-utils bash-completion alsa-utils pipewire pipewire-audio unzip"
-    ["Instalar aplicativos básicos"]="sudo apt install qimgv evince vlc htop mousepad flameshot"
-    ["Instalar o LibreOffice"]="sudo apt install --no-install-recommends libreoffice-writer libreoffice-calc libreoffice-impress"
+    ["Instalar o desktop"]="sudo apt install i3-wm xorg py3status suckless-tools xfce4-terminal rofi fzf wmctrl pcmanfm lxappearance nitrogen fonts-open-sans fonts-inconsolata arc-theme xz-utils bash-completion alsa-utils pipewire pipewire-audio unzip -y"
+    ["Instalar aplicativos básicos"]="sudo apt install qimgv evince vlc htop mousepad flameshot -y"
+    ["Instalar o LibreOffice"]="sudo apt install --no-install-recommends libreoffice-writer libreoffice-calc libreoffice-impress -y"
     ["Instalar Navegador"]="cat firefox.tar.gz.* > firefox.tar.gz & sudo tar -xzvf firefox.tar.gz -C /opt"
     ["Continuar instalação do Navegador"]="sudo mv firefox.desktop /usr/share/applications"
-    ["Instalar tela de login"]="sudo apt install lightdm lightdm-gtk-greeter & sudo systemctl enable lightdm & sudo systemctl start lightdm"
+    ["Instalar tela de login"]="sudo apt install lightdm lightdm-gtk-greeter -y"
+    ["Ativar tela de login"]="sudo systemctl enable lightdm"
+    ["Iniciar tela de login"]="sudo systemctl start lightdm"
 )
 ordem_execucao=(
    "Atualizar o sistema"
@@ -17,13 +19,15 @@ ordem_execucao=(
     "Instalar Navegador"
     "Continuar instalação do Navegador"
     "Instalar tela de login"
+    "Ativar tela de login"
+    "Iniciar tela de login"
 )
 sucesso=()
 erro=()
 pulados=()
 total_tarefas=${#ordem_execucao[@]}
 contador_atual=0
-echo "=== INICIANDO A INSTALAÇÃO ==="
+echo "=== INICIAR A INSTALAÇÃO ==="
 echo "Total de comandos: $total_tarefas"
 echo ""
 for titulo in "${ordem_execucao[@]}"; do
@@ -85,4 +89,4 @@ else
         echo "  - $titulo"
     done
 fi
-echo "================================================"
+echo "====================FIM DA INSTALAÇÃO============================"
