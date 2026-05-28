@@ -1,9 +1,8 @@
-[Desktop Entry] 
+[Desktop Entry]
+Name=firefox
 Type=Application
-Name=Mozilla Firefox 
-Comment=Browse the World Wide Web 
-Terminal=false 
-Exec=/opt/firefox/firefox %U 
+Comment=Browse the World Wide Web
+Terminal=false
+Exec=/opt/firefox/firefox %U
 Icon=/opt/firefox/icons/updater.jpeg
 Categories=Network;WebBrowser;
-Name=Firefox
