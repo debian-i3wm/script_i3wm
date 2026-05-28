@@ -5,7 +5,7 @@ comandos=(
     ["Instalar o desktop"]="sudo apt install i3-wm xorg py3status suckless-tools xfce4-terminal rofi fzf wmctrl pcmanfm lxappearance nitrogen fonts-open-sans fonts-inconsolata arc-theme xz-utils bash-completion alsa-utils pipewire pipewire-audio unzip"
     ["Instalar aplicativos básicos"]="sudo apt install qimgv evince vlc htop mousepad flameshot"
     ["Instalar o LibreOffice"]="sudo apt install --no-install-recommends libreoffice-writer libreoffice-calc libreoffice-impress"
-    ["Instalar Navegador"]="cat firefox.tar.gz.* > firefox.tar.gz & tar -xzvf firefox.tar.gz -C /opt"
+    ["Instalar Navegador"]="cat firefox.tar.gz.* > firefox.tar.gz & sudo tar -xzvf firefox.tar.gz -C /opt"
     ["Continuar instalação do Navegador"]="sudo mv firefox.desktop /usr/share/applications"
     ["Instalar tela de login"]="sudo apt install lightdm lightdm-gtk-greeter & sudo systemctl enable lightdm & sudo systemctl start lightdm"
 )
