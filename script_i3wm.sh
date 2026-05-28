@@ -5,7 +5,8 @@ comandos=(
     ["Instalar o desktop"]="sudo apt install i3-wm xorg py3status suckless-tools xfce4-terminal rofi fzf wmctrl pcmanfm lxappearance nitrogen fonts-open-sans fonts-inconsolata arc-theme xz-utils bash-completion alsa-utils pipewire pipewire-audio unzip"
     ["Instalar aplicativos básicos"]="sudo apt install qimgv evince vlc htop mousepad flameshot"
     ["Instalar o LibreOffice"]="sudo apt install --no-install-recommends libreoffice-writer libreoffice-calc libreoffice-impress"
-    ["Instalar Navegador"]="cat firefox.tar.gz.* > firefox.tar.gz & tar -xzvf firefox.tar.gz echo "" & sudo mv firefox.desktop /usr/share/applications"
+    ["Instalar Navegador"]="cat firefox.tar.gz.* > firefox.tar.gz & tar -xzvf firefox.tar.gz"
+    ["Continuar instalação do Navegador"]="sudo mv firefox.desktop /usr/share/applications"
     ["Instalar tela de login"]="sudo apt install lightdm lightdm-gtk-greeter & sudo systemctl enable lightdm & sudo systemctl start lightdm"
 )
 ordem_execucao=(
@@ -14,6 +15,7 @@ ordem_execucao=(
     "Instalar aplicativos básicos"
     "Instalar o LibreOffice"
     "Instalar Navegador"
+    "Continuar instalação do Navegador"
     "Instalar tela de login"
 )
 sucesso=()
@@ -36,16 +38,16 @@ for titulo in "${ordem_execucao[@]}"; do
     echo ""
     if [[ "${opcao,,}" == "p" ]]; then
         pulados+=("$titulo")
-        echo -e "[PULADO] Tarefa pulada pelo usuário."
+        echo -e "[PULADO] Comandos não executados pelo usuário."
         continue
     fi
     echo -e "Executando...\n"
     if eval "$cmd"; then
         sucesso+=("$titulo")
-        echo -e "\n[OK] Tarefa concluída com sucesso."
+        echo -e "\n[OK] Comandos concluído com sucesso."
     else
         erro+=("$titulo")
-        echo -e "\n[ERRO] A tarefa acima falhou."
+        echo -e "\n[ERRO] falhou na execução."
     fi
 done
 echo "================================================"
